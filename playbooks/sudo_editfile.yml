@@ -1,0 +1,14 @@
+---
+- hosts: managed_servers
+  strategy: free
+  remote_user: aganashcse
+  tasks:
+    - name: Insert multiple lines and Backup
+      become: yes
+      become_method: sudo
+      become_user: root
+      blockinfile:
+        path: /etc/bashrc
+        backup: yes
+        block: |
+          export JAVA_HOME=/home/aganashcse/jdk-14.0.new

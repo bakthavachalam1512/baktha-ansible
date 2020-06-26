@@ -1,0 +1,16 @@
+---
+- hosts: managed_servers
+  strategy: free
+  remote_user: aganashcse
+  tasks:
+    - name: Insert multiple lines and Backup
+      blockinfile:
+        path: /home/aganashcse/bak.sh
+        backup: yes
+        block: |
+          export JAVA_HOME=/home/aganashcse/jdk-14.0.2
+
+
+
+
+

@@ -3,21 +3,21 @@
 - name: Remove existing installation
   file:
     state: absent
-    path: "{{java_home_path}}/jdk-14.0.1"
+    path: "/home/aganashcse/jdk1.8.0_161"
 
 - name: create destination jdk source directory
   file:
-    path: "{{download_folder}}"
+    path: /home/aganashcse/oracle-installables
     state: directory
 
 - name: Copy jdk tar file to client
-  copy: src="{{src_java_tar_path}}"  dest="{{download_folder}}"
+  copy: src=/home/aganashcse/oracle-installables/openjdk-14.0.1_linux-x64_bin.tar.gz  dest=/home/aganashcse/oracle-installables
         owner=aganashcse group=aganashcse mode=0777
 
 - name: Install Java
   unarchive:
-    src: "{{desc_java_tar_path}}"
-    dest: "{{java_home_path}}"
+    src: "/home/aganashcse/oracle-installables/openjdk-14.0.1_linux-x64_bin.tar.gz"
+    dest: "/home/aganashcse/"
     copy: no
 
 - name: Edit bashrc file
@@ -25,14 +25,14 @@
   become_method: sudo
   become_user: root
   blockinfile:
-    path: "{{bash_file_path}}"
+    path: /etc/bashrc
     backup: yes
     block: |
       export JAVA_HOME=/home/aganashcse/jdk-14.0.1
       export PATH=$JAVA_HOME/bin:$PATH
 
 - name: Source bashrc file
-  shell: "source {{bash_file_path}}"
+  shell: "source /etc/bashrc"
   become: yes
   become_method: sudo
   become_user: root

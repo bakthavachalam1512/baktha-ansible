@@ -1,0 +1,7 @@
+---
+- hosts: host1
+  remote_user: aganashcse
+  tasks:
+  - name: run this command and ignore the result
+    shell: cat /etc/os-release 
+    ignore_errors: True

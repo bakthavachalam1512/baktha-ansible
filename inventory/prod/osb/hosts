@@ -2,5 +2,4 @@
 osb-prod-appserver-1
 
 [managed_servers]
-osb-prod-appserver-1
-osb-prod-appserver-2
+host1 ansible_ssh_host=35.202.27.233

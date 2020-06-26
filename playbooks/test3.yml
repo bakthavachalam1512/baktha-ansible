@@ -1,0 +1,7 @@
+---
+- hosts: host1
+  remote_user: aganashcse
+  tasks:
+  - name: Copy ansible inventory file to client
+    copy: src=/home/aganashcse/oracle-installables/jdk.zip  dest=/home/aganashcse/oracle-installables
+            owner=aganashcse group=aganashcse mode=0777

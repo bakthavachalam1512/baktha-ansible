@@ -1,11 +1,12 @@
 ---
 
 ## Common Folders and Files
-download_folder: /share/software/oracle-installables
+download_folder: /home/aganashcse/oracle-installables
 oracle_base_path: '/opt/osb12c'
 config_base_path: '/config/osb12c'
+bash_file_path: '/etc/bashrc'
 log_base_path: '/logs/osb12c'
-java_home_path: '/opt/jdk1.8.0_161'
+java_home_path: '/home/aganashcse/'
 activemq_home_path: '/opt/apache-activemq-5.15.0'
 domain_name: 'osb_domain'
 weblogic_version: '12c'
@@ -13,9 +14,10 @@ weblogic_release: '12.2.1.2.0'
 weblogic_jar_path: '{{download_folder}}/fmw_12.2.1.2.0_infrastructure.jar'
 osb_jar_path: '{{download_folder}}/fmw_12.2.1.2.0_osb.jar'
 weblogic_installation_type: 'Fusion Middleware Infrastructure'
-#weblogic_installation_type: 'WebLogic Server'
-install_folder: '/opt'
-java_tar_path: '{{download_folder}}/jdk-8u161-linux-x64.tar.gz'
+weblogic_installation_type: 'WebLogic Server'
+install_folder: '/home/aganashcse'
+src_java_tar_path: '{{download_folder}}/openjdk-14.0.1_linux-x64_bin.tar.gz'
+desc_java_tar_path: '{{download_folder}}/openjdk-14.0.1_linux-x64_bin.tar.gz'
 amq_tar_path: '/share/software/oracle-installables/apache-activemq-5.15.0-bin.tar.gz'
 
 ## Fusion Middleware Folders

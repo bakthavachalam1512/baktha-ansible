@@ -1,0 +1,10 @@
+---
+- hosts: managed_servers
+  strategy: free 
+  remote_user: aganashcse
+  tasks:
+    - name: Run a command as nobody
+      shell: "source /etc/bashrc"
+      become: yes
+      become_method: sudo
+      become_user: root
